@@ -1,0 +1,54 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-added-large-files
+        args: ['--maxkb=2048']
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: no-commit-to-branch
+      - id: trailing-whitespace
+
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.11.0
+    hooks:
+      - id: markdownlint-cli2
+        args: []
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.1.8
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix, --show-fixes]
+
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 23.12.0
+    hooks:
+      - id: black
+        types: [python]
+        additional_dependencies: ["click==8.0.4"]
+
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.6
+    hooks:
+      - id: codespell
+
+  - repo: local
+    hooks:
+      - id: pylint
+        args: ["--rcfile=.pylintrc"]
+        name: Pylint
+        entry: python -m pylint
+        language: system
+        files: \.py$
+
+ci:
+  autofix_prs: true
+  autofix_commit_msg: '[pre-commit.ci] Fixing issues with pre-commit'
+  autoupdate_schedule: monthly
+  autoupdate_commit_msg: '[pre-commit.ci] pre-commit-autoupdate'
+  skip: [] # Optionally list ids of hooks to skip on CI
