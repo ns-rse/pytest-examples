@@ -22,19 +22,20 @@ logger.add(
 
 
 def divide(a: float | int, b: float | int) -> float:
-    """Divide a by b.
+    """
+    Divide a by b.
 
     Parameters
     ----------
-    a: float | int
+    a : float | int
         Number to be divided.
-    b: float | int
+    b : float | int
         Number to divide by.
 
     Returns
     -------
     float
-        a divided by b.
+        Returns a divided by b.
     """
     try:
         return a / b
