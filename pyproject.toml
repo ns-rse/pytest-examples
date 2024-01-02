@@ -9,7 +9,7 @@ build-backend = "setuptools.build_meta"
 name = "pytest-examples"
 description = "Examples of working with pytest"
 readme = "README.md"
-license = {text = "GNU Lesser GPLv3 only"}
+license = {text = "MIT"}
 dynamic = ["version"]
 authors = [
   {name = "Neil Shephard", email = "n.shephard@sheffield.ac.uk"},
@@ -32,6 +32,8 @@ keywords = [
 requires-python = ">=3.8"
 dependencies = [
   "loguru",
+  "numpy",
+  "scikit-image",
 ]
 
 [project.optional-dependencies]
@@ -41,7 +43,6 @@ tests = [
   "pytest-cov",
   "pytest-lazy-fixture",
   "pytest-tmp-files",
-  "filetype",
 ]
 docs = [
   "Sphinx",
@@ -79,8 +80,8 @@ pypi = [
 ]
 
 [project.urls]
-Source = "https://github.com/ns-rse/pytest-example"
-Bug_Tracker = "https://github.com/ns-rse/pytest-example/issues"
+Source = "https://github.com/ns-rse/pytest-examples"
+Bug_Tracker = "https://github.com/ns-rse/pytest-examples/issues"
 
 [tool.flake8]
 max_line_length=120
