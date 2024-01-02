@@ -32,6 +32,16 @@ repos:
         types: [python]
         additional_dependencies: ["click==8.0.4"]
 
+  - repo: https://github.com/numpy/numpydoc
+    rev: v1.6.0
+    hooks:
+      - id: numpydoc-validation
+        exclude: |
+          (?x)(
+              tests/|
+              docs/
+          )
+
   - repo: https://github.com/codespell-project/codespell
     rev: v2.2.6
     hooks:

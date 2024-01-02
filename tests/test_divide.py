@@ -4,6 +4,11 @@ import pytest
 from pytest_examples.divide import divide
 
 
+def test_divide_unparameterised() -> None:
+    """Test the divide function."""
+    assert divide(10, 5) == 2
+
+
 @pytest.mark.parametrize(
     ("a", "b", "expected"),
     [
