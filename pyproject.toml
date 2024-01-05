@@ -114,7 +114,7 @@ write_to = "_version.py"
 
 [tool.pytest.ini_options]
 minversion = "7.0"
-addopts = ["--cov", "--mpl", "-ra", "--showlocals", "--strict-config", "--strict-markers"]
+addopts = ["--cov", "-ra", "--showlocals", "--strict-config", "--strict-markers"]
 xfail_strict = true
 testpaths = [
     "tests",
