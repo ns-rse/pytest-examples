@@ -33,7 +33,7 @@ def test_divide(a: float | int, b: float | int, expected: float) -> None:
         pytest.param(10, [2], TypeError, id="b is list"),
     ],
 )
-def test_divide_type_errors(a: float | int, b: float | int, exception: float) -> None:
+def test_divide_type_errors(a: float | int, b: float | int, exception: TypeError) -> None:
     """Test that TypeError is raised when objects other than int or float are passed as a and b."""
     with pytest.raises(exception):
         divide(a, b)
@@ -45,7 +45,7 @@ def test_divide_type_errors(a: float | int, b: float | int, exception: float) ->
         pytest.param(10, 0, ZeroDivisionError, id="b is zero"),
     ],
 )
-def test_divide_zero_division_error(a: float | int, b: float | int, exception: float) -> None:
+def test_divide_zero_division_error(a: float | int, b: float | int, exception: ZeroDivisionError) -> None:
     """Test that ZeroDivsionError is raised when attempting to divide by zero."""
     with pytest.raises(exception):
         divide(a, b)
