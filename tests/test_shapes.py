@@ -8,7 +8,7 @@ from pytest_examples.shapes import summarise_shape
 @pytest.mark.parametrize(
     ("shape", "area", "feret_diameter_max", "centroid"),
     [
-        pytest.param("square", 11, 7.810249675906654, (1.3636363636363635, 1.3636363636363635), id="summary of square"),
+        pytest.param("square", 24, 9.219544457292887, (4, 4), id="summary of square"),
         pytest.param("circle", 12, 5.385164807134504, (4, 4), id="summary of circle"),
     ],
 )
@@ -31,9 +31,9 @@ def test_summarise_shape_get_fixture_value(
     [
         pytest.param(
             pytest.lazy_fixture("square"),
-            11,
-            7.810249675906654,
-            (1.3636363636363635, 1.3636363636363635),
+            24,
+            9.219544457292887,
+            (4, 4),
             id="summary of square",
         ),
         pytest.param(pytest.lazy_fixture("circle"), 12, 5.385164807134504, (4, 4), id="summary of circle"),

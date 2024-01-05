@@ -8,10 +8,10 @@ from skimage import draw
 @pytest.fixture()
 def square() -> npt.NDArray:
     """Return a 2D numpy array of a square."""
-    square_array = np.zeros((6, 6), dtype=np.uint8)
-    start = (1, 1)
-    end = (5, 5)
-    rr, cc = draw.rectangle_perimeter(start, end, shape=square_array.shape)
+    square_array = np.zeros((9, 9), dtype=np.uint8)
+    start = (2, 2)
+    end = (6, 6)
+    rr, cc = draw.rectangle_perimeter(start, end)
     square_array[rr, cc] = 1
     return square_array
 

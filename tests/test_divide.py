@@ -1,4 +1,6 @@
 """Example pytests showing parameterisation and testing of failures."""
+from __future__ import annotations
+
 import pytest
 
 from pytest_examples.divide import divide
