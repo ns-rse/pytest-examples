@@ -1,9 +1,11 @@
 """Summarise Shapes."""
+from typing import Any
+
 import numpy.typing as npt
 from skimage import measure
 
 
-def summarise_shape(shape: npt.NDArray) -> list:
+def summarise_shape(shape: npt.NDArray) -> list[Any]:
     """
     Summarise the region properties of a 2D numpy array using Scikit-Image.
 

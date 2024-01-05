@@ -42,6 +42,11 @@ repos:
               docs/
           )
 
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.8.0
+    hooks:
+    -   id: mypy
+
   - repo: https://github.com/codespell-project/codespell
     rev: v2.2.6
     hooks:
@@ -61,4 +66,4 @@ ci:
   autofix_commit_msg: '[pre-commit.ci] Fixing issues with pre-commit'
   autoupdate_schedule: monthly
   autoupdate_commit_msg: '[pre-commit.ci] pre-commit-autoupdate'
-  skip: [] # Optionally list ids of hooks to skip on CI
+  skip: [pylint] # Optionally list ids of hooks to skip on CI
