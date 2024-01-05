@@ -42,6 +42,7 @@ tests = [
   "pytest",
   "pytest-cov",
   "pytest-lazy-fixture",
+  "pytest-mpl",
   "pytest-tmp-files",
 ]
 docs = [
