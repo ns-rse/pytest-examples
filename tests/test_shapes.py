@@ -1,4 +1,5 @@
 """Test the shapes module."""
+
 import numpy.typing as npt
 import pytest
 

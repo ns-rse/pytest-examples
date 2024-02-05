@@ -1,4 +1,5 @@
 """Example pytests showing parameterisation and testing of failures."""
+
 from __future__ import annotations
 
 import pytest
