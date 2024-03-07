@@ -1,4 +1,5 @@
 """Initialise the packaged and setup logging."""
+
 # from importlib.metadata import version
 
 # release = version("pytest-example")

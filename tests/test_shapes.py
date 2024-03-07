@@ -1,4 +1,5 @@
 """Test the shapes module."""
+
 import numpy.typing as npt
 import pytest
 
@@ -44,7 +45,6 @@ def test_summarise_shape_lazy_fixture(
 ) -> None:
     """Test the summarisation of shapes."""
     shape_summary = summarise_shape(shape)
-    print(f"{shape_summary[0]['centroid']=}")
     assert shape_summary[0]["area"] == area
     assert shape_summary[0]["feret_diameter_max"] == feret_diameter_max
     assert shape_summary[0]["centroid"] == centroid
