@@ -39,9 +39,9 @@ dependencies = [
 [project.optional-dependencies]
 tests = [
   "py",
-  "pytest",
+  "pytest<8.0.0",
   "pytest-cov",
-  "pytest-lazy-fixture",
+  "pytest-lazy-fixtures",
   "pytest-tmp-files",
 ]
 docs = [
