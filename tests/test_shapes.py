@@ -37,7 +37,6 @@ def test_summarise_shape_get_fixture_value(
 def test_summarise_shape_lazy_fixture(shape: str, area: float, feret_diameter_max: float, centroid: tuple) -> None:
     """Test the summarisation of shapes."""
     shape_summary = summarise_shape(shape)
-    print(f"{shape_summary[0]['centroid']=}")
     assert shape_summary[0]["area"] == area
     assert shape_summary[0]["feret_diameter_max"] == feret_diameter_max
     assert shape_summary[0]["centroid"] == centroid
