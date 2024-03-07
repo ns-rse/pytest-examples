@@ -41,7 +41,8 @@ tests = [
   "py",
   "pytest<8.0.0",
   "pytest-cov",
-  "pytest-lazy-fixtures",
+  "pytest-lazy-fixture",
+  "pytest-mpl",
   "pytest-tmp-files",
 ]
 docs = [
@@ -114,7 +115,7 @@ write_to = "_version.py"
 
 [tool.pytest.ini_options]
 minversion = "7.0"
-addopts = ["--cov", "--mpl", "-ra", "--showlocals", "--strict-config", "--strict-markers"]
+addopts = ["--cov", "-ra", "--showlocals", "--strict-config", "--strict-markers"]
 xfail_strict = true
 testpaths = [
     "tests",
@@ -230,6 +231,10 @@ python_version = 3.11
 strict = true
 show_error_codes = true
 warn_unreachable = true
+disable_error_code = [
+  "misc",  # Due to errors "Untyped decorator makes function 'x' untyped" from pytest
+  "no-any-return"
+]
 enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
 exclude='''
 (
