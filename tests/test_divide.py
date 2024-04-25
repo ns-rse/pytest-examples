@@ -7,6 +7,7 @@ import pytest
 from pytest_examples.divide import divide
 
 
+@pytest.mark.skip(reason="redudant - covered by test_divide()")
 def test_divide_unparameterised() -> None:
     """Test the divide function."""
     assert divide(10, 5) == 2
@@ -19,7 +20,9 @@ def test_divide_unparameterised() -> None:
         pytest.param(9, 3, 3, id="nine divided by three"),
         pytest.param(5, 2, 2.5, id="five divided by two"),
         pytest.param(0, 100, 0, id="zero divided by one hundred"),
-        pytest.param(10, 0, ZeroDivisionError, id="zero division error", marks=pytest.mark.xfail),
+        pytest.param(
+            10, 0, ZeroDivisionError, id="zero division error", marks=pytest.mark.xfail(reason="expected to fail")
+        ),
     ],
 )
 def test_divide(a: float | int, b: float | int, expected: float) -> None:
