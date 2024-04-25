@@ -7,7 +7,7 @@ import pytest
 from pytest_examples.divide import divide
 
 
-@pytest.mark.skip(reason="redudant - covered by test_divide()")
+@pytest.mark.skip(reason="redundant - covered by test_divide()")
 def test_divide_unparameterised() -> None:
     """Test the divide function."""
     assert divide(10, 5) == 2
