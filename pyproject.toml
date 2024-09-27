@@ -29,10 +29,13 @@ keywords = [
   "pytest",
   "examples"
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.12"
 dependencies = [
   "loguru",
+  "matplotlib",
   "numpy",
+  "pytest-cov",
+  "pytest-mpl",
   "scikit-image",
 ]
 
