@@ -1,11 +1,8 @@
 """Tests of the mpl_example module."""
 
-import numpy as np
-import numpy.typing as npt
 import pytest
-from pytest_examples import mpl_example
 
-np.random.seed(324985)
+from pytestexamples import mpl_example
 
 
 @pytest.mark.mpl_image_compare(baseline_dir="resources/img")
@@ -18,5 +15,5 @@ np.random.seed(324985)
 )
 def test_scatter_hist(n_obs: int, figsize: tuple[int, int], title: str, cmap: str, seed: int) -> None:
     """Test of the scatter_hist() function."""
-    fig = mpl_example.scatter(n_obs, figsize, title, cmap, seed)
+    fig, _ = mpl_example.scatter(n_obs, figsize, title, cmap, seed)
     return fig

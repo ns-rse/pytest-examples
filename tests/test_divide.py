@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from pytest_examples.divide import divide
+from pytestexamples.divide import divide
 
 
 @pytest.mark.skip(reason="redundant - covered by test_divide()")

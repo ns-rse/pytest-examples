@@ -1,8 +1,9 @@
 """Example code for pytest-mpl exposition."""
 
-import numpy as np
-import numpy.typing as npt
 import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.axes import Axes
+from matplotlib.figure import Figure
 
 
 def scatter(
@@ -11,11 +12,9 @@ def scatter(
     title: str | None = None,
     cmap: str = "green",
     seed: int = 3513387,
-) -> tuple:
-    """Generate a scatter plot of x v y with histograms of each on the border.
-
-    This example is taken from the `Scatter Histogram Example
-    <https://matplotlib.org/stable/gallery/lines_bars_and_markers/scatter_hist.html>`_.
+) -> tuple[Figure, Axes]:
+    """
+    Generate a scatter plot of 'x' v 'y' with histograms of each on the border.
 
     Parameters
     ----------
@@ -23,6 +22,8 @@ def scatter(
         Number of random observations to generate.
     figsize : tuple[int, int]
         Shape to plot.
+    title : str | None
+        Title to add to the plot.
     cmap : str
         Colour to use for plotting.
     seed : int
@@ -31,14 +32,16 @@ def scatter(
     Returns
     -------
     tuple(fig, ax)
-
+        Returns a Matplotlib figure and axis.
     """
     # Generate two random sets of numbers
-    x = np.random.randn(n_obs)
-    y = np.random.randn(n_obs)
+    rng = np.random.default_rng(seed)
+    x = rng.random(n_obs)
+    y = rng.random(n_obs)
     # Create the figure
     fig = plt.figure(figsize=figsize)
     ax = fig.add_subplot()
-    ax.scatter(x, y)
+    ax.scatter(x, y, cmap=cmap)
+    plt.title(title)
 
     return (fig, ax)

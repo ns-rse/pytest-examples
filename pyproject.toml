@@ -42,9 +42,8 @@ dependencies = [
 [project.optional-dependencies]
 tests = [
   "py",
-  "pytest<8.0.0",
+  "pytest",
   "pytest-cov",
-  "pytest-lazy-fixture",
   "pytest-mpl",
   "pytest-tmp-files",
 ]
@@ -131,7 +130,7 @@ filterwarnings = [
 log_cli_level = "info"
 
 [tool.coverage.run]
-source = ["pytest_examples"]
+source = ["pytestexamples"]
 omit = [
   "_version.py",
   "*tests*",
