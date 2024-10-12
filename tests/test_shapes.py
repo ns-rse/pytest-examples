@@ -13,7 +13,11 @@ from pytestexamples import shapes
     ],
 )
 def test_summarise_shape_get_fixture_value(
-    shape: str, area: float, feret_diameter_max: float, centroid: tuple[int, int], request
+    shape: str,
+    area: float,
+    feret_diameter_max: float,
+    centroid: tuple[int, int],
+    request: pytest.fixture.FixtureRequest,
 ) -> None:
     """Test the summarisation of shapes."""
     shape_summary = shapes.summarise_shape(request.getfixturevalue(shape))

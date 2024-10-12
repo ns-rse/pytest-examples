@@ -10,7 +10,6 @@ def scatter(
     n_obs: int,
     figsize: tuple[int, int],
     title: str | None = None,
-    cmap: str = "green",
     seed: int = 3513387,
 ) -> tuple[Figure, Axes]:
     """
@@ -24,8 +23,6 @@ def scatter(
         Shape to plot.
     title : str | None
         Title to add to the plot.
-    cmap : str
-        Colour to use for plotting.
     seed : int
         Seed for pseudo-random number generation.
 
@@ -41,7 +38,7 @@ def scatter(
     # Create the figure
     fig = plt.figure(figsize=figsize)
     ax = fig.add_subplot()
-    ax.scatter(x, y, cmap=cmap)
+    ax.scatter(x, y)
     plt.title(title)
 
     return (fig, ax)
