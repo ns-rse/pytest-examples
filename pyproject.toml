@@ -6,7 +6,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pytest-examples"
+name = "pytestexamples"
 description = "Examples of working with pytest"
 readme = "README.md"
 license = {text = "MIT"}
